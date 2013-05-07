@@ -1,0 +1,69 @@
+#!/usr/bin/env python
+#
+# Repetition trainer. Displays an item from a source file on the shell. Hook
+# this up to frequently used commands and you're constantly exposed to the
+# what you want to rote-learn
+#
+# invocation:
+#   shelltrainer [category]
+#
+# Where category matches the name of a .json file in $HOME/.shelltrainer. If
+# none is given, a random one is picked.
+#
+# Example hook:
+#    alias mutt="mutt; shelltrainer"
+#
+# Config file format:
+# {
+# "words" : [
+#     { 
+#        "word" : "zapato",
+#        "gender" : "m",
+#        "translation" : "shoe"
+#    },
+#    { 
+#        "word" : "azul",
+#        "gender" : "",
+#        "translation" : "blue"
+#    }
+#]
+#}
+
+import json
+import sys
+import os
+import random
+
+config="~/.shelltrainer"
+
+class ShellTrainer(object):
+    def __init__(self):
+        self.categories = {}
+        self.load_source(os.path.expanduser(config))
+
+    def load_source(self, path):
+        if not os.path.isdir(path):
+            os.mkdir(path)
+        for f in os.listdir(path):
+            if not f.endswith(".json"):
+                continue
+
+            category = f[:f.rfind(".json")]
+
+            with open(os.path.join(path, f)) as fp:
+                j = json.load(fp)
+                self.categories[category] = j
+
+
+    def pick_one(self, category = None):
+        if category == None:
+            category = random.sample(self.categories.keys(), 1)[0]
+
+        entry = random.sample(self.categories[category]["words"], 1)[0]
+        print "%s (%s): %s" % (entry["word"], entry["gender"], entry["translation"])
+
+
+if __name__ == "__main__":
+    st = ShellTrainer()
+    st.pick_one(sys.argv[1] if len(sys.argv) > 1 else None)
+
