@@ -23,9 +23,20 @@ none is given.
 Example hook
 ------------
 
-    alias mutt="mutt; shelltrainer"
+    alias mutt="shelltrainer; mutt"
 
 i.e. whenever I quit mutt, I see one word displayed
+
+Why have shelltrainer before mutt? So any arguments are passed to mutt. And
+since mutt usually doesn't print anything anyway, this is fine. You could
+work around this by defining a script, or a shell function like this (zsh):
+
+<pre>
+mutt() {
+        /usr/bin/mutt $*
+        shelltrainer
+}
+</pre>
 
 Config file format:
 <pre>
