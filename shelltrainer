@@ -25,12 +25,12 @@
 # {
 # "words" : [
 #     { 
-#        "word" : "zapato",
-#        "translation" : "shoe"
+#        "definition" : "zapato",
+#        "description" : "shoe"
 #    },
 #    { 
-#        "word" : "azul",
-#        "translation" : "blue"
+#        "definition" : "azul",
+#        "description" : "blue"
 #    }
 #]
 #}
@@ -86,11 +86,11 @@ class ShellTrainer(object):
             print "[%s]" % category,
 
         entry = random.sample(self.categories[category]["words"], 1)[0]
-        print "%s: %s" % (entry["word"], entry["translation"])
+        print "%s: %s" % (entry["definition"], entry["description"])
 
-    def add(self, category, word, translation):
+    def add(self, category, definition, description):
         j = self.categories[category]
-        j['words'].append({u'word':word, u'translation':translation})
+        j['words'].append({u'definition':definition, u'description':description})
 
         fname = category + ".json"
         with open(os.path.join(self.config_path, fname), "w") as fp:
