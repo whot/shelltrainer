@@ -18,12 +18,10 @@
 # "words" : [
 #     { 
 #        "word" : "zapato",
-#        "gender" : "m",
 #        "translation" : "shoe"
 #    },
 #    { 
 #        "word" : "azul",
-#        "gender" : "",
 #        "translation" : "blue"
 #    }
 #]
@@ -33,13 +31,32 @@ import json
 import sys
 import os
 import random
+import argparse
 
 config="~/.shelltrainer"
 
+class ShellTrainerCLI:
+    def __init__(self):
+        self.parser = argparse.ArgumentParser()
+        self.parser.add_argument('--add-to')
+        self.parser.add_argument('args', nargs="*")
+
+    def parse_args(self, argv):
+        args = self.parser.parse_args(argv)
+        category = args.add_to
+        st = ShellTrainer()
+        if category != None:
+            st.add(category, *args.args)
+        else:
+            st.pick_one(args.args[0] if len(args.args) > 0 else None)
+
+
 class ShellTrainer(object):
+    config_path = os.path.expanduser(config)
+
     def __init__(self):
         self.categories = {}
-        self.load_source(os.path.expanduser(config))
+        self.load_source(self.config_path)
 
     def load_source(self, path):
         if not os.path.isdir(path):
@@ -60,10 +77,17 @@ class ShellTrainer(object):
             category = random.sample(self.categories.keys(), 1)[0]
 
         entry = random.sample(self.categories[category]["words"], 1)[0]
-        print "%s (%s): %s" % (entry["word"], entry["gender"], entry["translation"])
+        print "%s: %s" % (entry["word"], entry["translation"])
 
+    def add(self, category, word, translation):
+        j = self.categories[category]
+        j['words'].append({u'word':word, u'translation':translation})
+
+        fname = category + ".json"
+        with open(os.path.join(self.config_path, fname), "w") as fp:
+            json.dump(j, fp, indent=4)
 
 if __name__ == "__main__":
-    st = ShellTrainer()
-    st.pick_one(sys.argv[1] if len(sys.argv) > 1 else None)
+    cli = ShellTrainerCLI()
+    cli.parse_args(sys.argv[1:])
 
