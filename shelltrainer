@@ -75,6 +75,7 @@ class ShellTrainer(object):
     def pick_one(self, category = None):
         if category == None:
             category = random.sample(self.categories.keys(), 1)[0]
+            print "[%s]" % category,
 
         entry = random.sample(self.categories[category]["words"], 1)[0]
         print "%s: %s" % (entry["word"], entry["translation"])
