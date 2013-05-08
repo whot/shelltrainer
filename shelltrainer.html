@@ -1,0 +1,79 @@
+<!--
+    Firefox: about:config, then browser.newtab.url, set it to this page.
+-->
+<html>
+    <head>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="purl.js"></script>
+        <script language="javascript">
+            function pick_word() {
+                var category = $.url().param("category");
+                if (category === undefined) {
+                    document.getElementById("description").innerHTML = "You need to specify a category";
+                    return;
+                }
+
+                var URL= category + ".json";
+                var json = (function() {
+                    var json = null;
+                    $.ajax({
+                        'async': false,
+                        'global': false,
+                        'url': URL,
+                        'dataType': "json",
+                        'success': function (data) {
+                            json = data;
+                        }
+                    });
+                    return json;
+                })();
+
+                if (json === null) {
+                    document.getElementById("description").innerHTML = URL;
+                    return;
+                }
+
+                var rnd = Math.floor(Math.random() * json.words.length);
+                var word = json.words[rnd];
+                document.getElementById("definition").innerHTML = word.definition;
+                document.getElementById("description").innerHTML = word.description;
+
+            }
+        </script>
+    </head>
+    <style type="text/css">
+        body { font-family: Helvetica, sans-serif }
+        #definition {
+            margin-top: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-size: 22pt;
+            font-weight: bold;
+            background: #dfdfdf;
+            width: 50%;
+            height: 50px;
+            top-margin: 50px;
+            padding: 20px;
+            line-height: 50px;
+        }
+        #description {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-size: 14pt;
+            padding: 20px;
+            background: #efefef;
+            position:relative;
+            top: 50%;
+            width: 50%;
+        };
+    </style>
+    <body onLoad="pick_word()">
+        <div id="frame">
+            <div id="definition">Error loading source file</div>
+            <div id="description">none</div>
+        </div>
+    </body>
+</script>
+</html>

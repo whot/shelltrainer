@@ -53,3 +53,15 @@ Config file format:
 ]
 }
 </pre>
+
+
+HTML/JS
+-------
+The HTML version of shelltrainer is best used in Firefox as the source for a
+new tab. This way you'll see a word every time you open a new tab. To set
+this up, open about:config and set this option:
+   browser.newtab.url = file:///path/to/file/shelltrainer.html?category=spanish
+This will load the spanish.json file at the location of the html file.
+
+Current limitation: the json source files must be in the same directory as
+the html file. If you know a way around this, let me know.
