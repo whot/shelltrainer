@@ -1,0 +1,76 @@
+{
+    "words": [
+        {
+            "definition": "zapato", 
+            "description": "(m) shoe"
+        }, 
+        {
+            "definition": "azul", 
+            "description": "blue"
+        }, 
+        {
+            "definition": "leche", 
+            "description": "(f) milk"
+        }, 
+        {
+            "definition": "fecha", 
+            "description": "(f) date"
+        }, 
+        {
+            "definition": "bonito/bonita", 
+            "description": "(m/f) pretty, beautiful"
+        }, 
+        {
+            "definition": "marido", 
+            "description": "(m) husband"
+        }, 
+        {
+            "definition": "fruta", 
+            "description": "(f) fruit"
+        }, 
+        {
+            "definition": "blusa", 
+            "description": "(f) blouse"
+        }, 
+        {
+            "definition": "llamar", 
+            "description": "to call"
+        }, 
+        {
+            "definition": "caballo", 
+            "description": "(m) horse"
+        }, 
+        {
+            "definition": "llegar", 
+            "description": "to arrive, to reach"
+        }, 
+        {
+            "definition": "coche", 
+            "description": "(m) car"
+        }, 
+        {
+            "definition": "queso", 
+            "description": "(m) cheese"
+        }, 
+        {
+            "definition": "querido", 
+            "description": "(m) beloved, lover"
+        }, 
+        {
+            "definition": "que", 
+            "description": "that, what"
+        }, 
+        {
+            "definition": "quiza", 
+            "description": "perhaps"
+        }, 
+        {
+            "definition": "quien", 
+            "description": "who"
+        }, 
+        {
+            "definition": "quinto", 
+            "description": "fifth"
+        }
+    ]
+}
