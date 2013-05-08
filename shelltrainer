@@ -11,6 +11,7 @@ import sys
 import os
 import random
 import argparse
+import termcolor
 
 config="~/.shelltrainer"
 
@@ -52,12 +53,15 @@ class ShellTrainer(object):
 
 
     def pick_one(self, category = None):
+        s= ""
         if category == None:
             category = random.sample(self.categories.keys(), 1)[0]
-            print "[%s]" % category,
+            s = "[%s] " % category
 
         entry = random.sample(self.categories[category]["words"], 1)[0]
-        print "%s: %s" % (entry["definition"], entry["description"])
+        s += termcolor.colored("%s: " % entry["definition"], attrs=["bold"])
+        s += entry["description"]
+        print s
 
     def add(self, category, definition, description):
         j = self.categories[category]
