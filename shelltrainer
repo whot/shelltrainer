@@ -63,7 +63,14 @@ class ShellTrainer(object):
         s += entry["description"]
         print s
 
+    def create_new_category(self, category):
+        cat = {"words" : [ ] }
+        self.categories[category] = cat
+
     def add(self, category, definition, description):
+        if not self.categories.has_key(category):
+            self.create_new_category(category)
+
         j = self.categories[category]
         j['words'].append({u'definition':definition, u'description':description})
 
