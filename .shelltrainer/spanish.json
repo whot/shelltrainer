@@ -71,6 +71,18 @@
         {
             "definition": "quinto", 
             "description": "fifth"
+        }, 
+        {
+            "definition": "perro", 
+            "description": "(m) dog"
+        }, 
+        {
+            "definition": "carro", 
+            "description": "(m) cart"
+        }, 
+        {
+            "definition": "guitarra", 
+            "description": "(f) guitar"
         }
     ]
 }

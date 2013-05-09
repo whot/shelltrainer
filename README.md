@@ -8,8 +8,9 @@ exposed to the what you want to rote-learn.
 
 For example, I use it to teach myself vocabulary in various languages
 
-Invocation
-----------
+PYTHON
+------
+The python version of shelltrainer is also the data entry interface.
 
      $> shelltrainer --add-to spanish azul blue
 
