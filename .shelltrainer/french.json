@@ -3,6 +3,78 @@
         {
             "definition": "bien s\u00fbr", 
             "description": "of course"
+        }, 
+        {
+            "definition": "c'est \u00e7a?", 
+            "description": "correct?"
+        }, 
+        {
+            "definition": "tenez", 
+            "description": "here you go"
+        }, 
+        {
+            "definition": "bonsoir", 
+            "description": "good evening"
+        }, 
+        {
+            "definition": "quel est votre nom?", 
+            "description": "what is Your name?"
+        }, 
+        {
+            "definition": "s'il vous plait", 
+            "description": "please"
+        }, 
+        {
+            "definition": "je sui, tu es, il/elle est", 
+            "description": "to be"
+        }, 
+        {
+            "definition": "nous sommes, vous \u00eates, ils/elles sont", 
+            "description": "to be"
+        }, 
+        {
+            "definition": "le nom, noms", 
+            "description": "(m) name"
+        }, 
+        {
+            "definition": "le programme, programmes,", 
+            "description": "(m) program"
+        }, 
+        {
+            "definition": "le f\u00eate, f\u00eate", 
+            "description": "(m) event, party"
+        }, 
+        {
+            "definition": "l'amour, amours", 
+            "description": "(m) love"
+        }, 
+        {
+            "definition": "l'id\u00e9e, id\u00e9es", 
+            "description": "(f) idea"
+        }, 
+        {
+            "definition": "l'h\u00f4tel, h\u00f4tels", 
+            "description": "(m) hotel"
+        }, 
+        {
+            "definition": "l'heure, heures", 
+            "description": "(f) hour"
+        }, 
+        {
+            "definition": "comment allez-vous?", 
+            "description": "how are You?"
+        }, 
+        {
+            "definition": "\u00e7a va?", 
+            "description": "how are you?"
+        }, 
+        {
+            "definition": "bien, \u00e7a va, pas mal", 
+            "description": "good, ok, not bad"
+        }, 
+        {
+            "definition": "la chason, chansons", 
+            "description": "(f) song"
         }
     ]
 }

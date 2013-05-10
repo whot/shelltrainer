@@ -83,6 +83,18 @@
         {
             "definition": "guitarra", 
             "description": "(f) guitar"
+        }, 
+        {
+            "definition": "el vacaci\u00f3n, los vacaciones", 
+            "description": "(m) vacation"
+        }, 
+        {
+            "definition": "veinte", 
+            "description": "twenty"
+        }, 
+        {
+            "definition": "el vino, los vinos", 
+            "description": "(m) wine"
         }
     ]
 }
