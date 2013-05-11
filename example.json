@@ -1,0 +1,12 @@
+{
+    "words": [
+        {
+            "definition": "some definition", 
+            "description": "some description"
+        }, 
+        {
+            "definition": "second defintion", 
+            "description": "second description"
+        }, 
+    ]
+}
