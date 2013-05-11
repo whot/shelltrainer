@@ -5,7 +5,15 @@
     <head>
         <script type="text/javascript" src="jquery.js"></script>
         <script type="text/javascript" src="purl.js"></script>
+        <script type="text/javascript" src="jquery.cookie.js"></script>
         <script language="javascript">
+            function setup() {
+                pick_word();
+
+                var vis = $.cookie("description_visibility");
+                set_visiblity(vis);
+            }
+
             function pick_word() {
                 var category = $.url().param("category");
                 if (category === undefined) {
@@ -39,6 +47,20 @@
                 document.getElementById("description").innerHTML = word.description;
 
             }
+
+            function toggle_visibility() {
+                var state = document.getElementById("description").style.display;
+                set_visiblity(state == 'none' ? 'true' : 'false');
+            }
+
+            function set_visiblity(visible) {
+                var elem_d = document.getElementById("description");
+                var elem_vt = document.getElementById("visibility_toggle");
+
+                elem_d.style.display = (visible == 'true') ? 'block' : 'none';
+                elem_vt.innerHTML = (visible == 'true') ? 'hide' : 'show';
+                $.cookie("description_visibility", visible, { expires : 100 });
+            }
         </script>
     </head>
     <style type="text/css">
@@ -57,6 +79,15 @@
             padding: 20px;
             line-height: 50px;
         }
+        #description_container {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            background: #efefef;
+            position:relative;
+            top: 50%;
+            width: 50%;
+        }
         #description {
             margin-left: auto;
             margin-right: auto;
@@ -67,12 +98,22 @@
             position:relative;
             top: 50%;
             width: 50%;
-        };
+        }
+        #visibility_toggle {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 10pt;
+            text-decoration: none;
+        }
     </style>
-    <body onLoad="pick_word()">
+    <body onLoad="setup()">
         <div id="frame">
             <div id="definition">Error loading source file</div>
-            <div id="description">none</div>
+            <div id="description_container">
+                <div id="description">none</div>
+                <a id="visibility_toggle" href="#" onClick="toggle_visibility()">hide</a>
+            </div>
         </div>
     </body>
 </script>
