@@ -95,6 +95,38 @@
         {
             "definition": "el vino, los vinos", 
             "description": "(m) wine"
+        }, 
+        {
+            "definition": "el gato, la gata", 
+            "description": "(m/f) cat"
+        }, 
+        {
+            "definition": "gordo/gorda", 
+            "description": "fat, plump"
+        }, 
+        {
+            "definition": "guapo/guapa", 
+            "description": "handsome"
+        }, 
+        {
+            "definition": "joven", 
+            "description": "young"
+        }, 
+        {
+            "definition": "el Julio", 
+            "description": "July"
+        }, 
+        {
+            "definition": "el hombre", 
+            "description": "man"
+        }, 
+        {
+            "definition": "el hijo", 
+            "description": "son"
+        }, 
+        {
+            "definition": "la hermana", 
+            "description": "sister"
         }
     ]
 }
