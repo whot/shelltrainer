@@ -127,6 +127,22 @@
         {
             "definition": "la hermana", 
             "description": "sister"
+        }, 
+        {
+            "definition": "la guerra, las guerras", 
+            "description": "(f) war"
+        }, 
+        {
+            "definition": "guiar", 
+            "description": "to guide, to lead"
+        }, 
+        {
+            "definition": "la gente, las gentes", 
+            "description": "(f) people"
+        }, 
+        {
+            "definition": "la gimnasia, las gimnasias", 
+            "description": "(f) gymnastics, gym"
         }
     ]
 }
